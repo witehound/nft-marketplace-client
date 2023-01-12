@@ -22,7 +22,7 @@ const Navbar = () => {
 
   const openMenu = (e) => {
     const btnText = e.target.innerText;
-    if (btnText == "Discover ") {
+    if (btnText == "Discover") {
       setDiscover(true);
       setHelp(false);
       setNotification(false);
