@@ -98,7 +98,7 @@ const Sidebar = ({ setOpenSideBarMenu }) => {
       <div className={styles.sidebar}>
         <GrClose className={styles.sidebar_closeBtn} onClick={closeSideBar} />
         <div className={styles.sidebar_box}>
-          <Image src={images.logo} alt="logo" height={150} width={150} />
+          <Image src={images.logo} alt="logo" height={120} width={150} />
           <p>
             Discover the most outsatanding articles in the nft space & Share
             your story
