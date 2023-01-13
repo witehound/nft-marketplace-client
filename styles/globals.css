@@ -5,18 +5,13 @@
   --icons-light-color: #4c577341;
   --iconns-bg-color-: #e2e6e9;
   --shadow-light-color: white;
-  --shadow-dark-color: #d3ead7;
+  --shadow-dark-color: #d3dae7;
   --main-bg-color: #ecf0f3;
-  --box-shadow: 1rem 1rem 1rem
-    var(
-      var(--shadow-dark-color),
-      -1rem -1rem -1rem var(var(--shadow-dark-color))
-    );
-  --box-shadow-two: 0rem 0rem 0rem
-    var(
-      var(--shadow-dark-color),
-      -3rem -3rem -3rem var(var(--shadow-dark-color))
-    );
+  --box-shadow: 1rem 1rem 1rem var(--shadow-dark-color),
+    -1rem -1rem 1rem var(--shadow-light-color);
+
+  --box-shadow-two: 0rem 0rem 0rem var(--shadow-dark-color),
+    -0.3rem -0.3rem 1rem var(--shadow-dark-color);
 }
 
 * {
@@ -46,4 +41,13 @@
   border-radius: 2rem;
   background-color: var(--icons-color);
   width: 0.5rem;
+}
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  color: var(--icons-color);
+  background-color: var(--main-bg-color);
 }

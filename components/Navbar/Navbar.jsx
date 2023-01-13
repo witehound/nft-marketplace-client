@@ -114,7 +114,7 @@ const Navbar = () => {
             {notification ? <Notification /> : null}
           </div>
           <div className={styles.navbar_container_right_button}>
-            <Button btnText="Create" />
+            <Button btnText="Create" handleClick={() => {}} />
           </div>
           <div className={styles.navbar_container_right_profile_box}>
             <div className={styles.navbar_container_right_profile}>
