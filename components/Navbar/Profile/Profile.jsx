@@ -44,20 +44,17 @@ const Profile = () => {
             <Link href={{ pathname: "/edit-profile" }}>Edit Profile</Link>
           </p>
         </div>
-
-        <div className={styles.profile_menu_two}>
-          <div className={styles.profile_menu_one_item}>
-            <MdHelpCenter />
-            <p>
-              <Link href={{ pathname: "/help" }}>Help</Link>
-            </p>
-          </div>
-          <div className={styles.profile_menu_one_item}>
-            <TbDownload />
-            <p>
-              <Link href={{ pathname: "/disconnect" }}>Disconnect</Link>
-            </p>
-          </div>
+        <div className={styles.profile_menu_one_item}>
+          <MdHelpCenter />
+          <p>
+            <Link href={{ pathname: "/help" }}>Help</Link>
+          </p>
+        </div>
+        <div className={styles.profile_menu_one_item}>
+          <TbDownload />
+          <p>
+            <Link href={{ pathname: "/disconnect" }}>Disconnect</Link>
+          </p>
         </div>
       </div>
     </div>
