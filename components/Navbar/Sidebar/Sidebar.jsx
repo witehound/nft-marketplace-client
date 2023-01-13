@@ -17,7 +17,7 @@ import styles from "./Sidebar.module.css";
 import images from "../../../img";
 import Button from "../../Button/Button";
 
-const Sidebar = () => {
+const Sidebar = ({ setOpenSideBarMenu }) => {
   const [openDiscover, setOpenDiscover] = useState(false);
   const [openHelp, setOpenHelp] = useState(false);
 
@@ -73,7 +73,93 @@ const Sidebar = () => {
       link: "subscription",
     },
   ];
-  return <></>;
+
+  const closeSideBar = () => {
+    setOpenSideBarMenu(false);
+  };
+
+  const openDiscoverMenu = () => {
+    if (!openDiscover) {
+      setOpenDiscover(true);
+    } else {
+      setOpenDiscover(false);
+    }
+  };
+
+  const openHelpMenu = () => {
+    if (!openHelp) {
+      setOpenHelp(true);
+    } else {
+      setOpenHelp(false);
+    }
+  };
+  return (
+    <>
+      <div className={styles.sidebar}>
+        <GrClose className={styles.sidebar_closeBtn} onClick={closeSideBar} />
+        <div className={styles.sidebar_box}>
+          <Image src={images.logo} alt="logo" height={150} width={150} />
+          <p>
+            Discover the most outsatanding articles in the nft space & Share
+            your story
+          </p>
+          <div className={styles.sidebar_socials}>
+            <a href="#">
+              <TiSocialFacebook />
+            </a>
+            <a href="#">
+              <TiSocialLinkedin />
+            </a>
+            <a href="#">
+              <TiSocialTwitter />
+            </a>
+            <a href="#">
+              <TiSocialYoutube />
+            </a>
+            <a href="#">
+              <TiSocialInstagram />
+            </a>
+          </div>
+        </div>
+        <div className={styles.sidebar_menu}>
+          <div>
+            <div className={styles.sidebar_menu_box} onClick={openDiscoverMenu}>
+              <p>Discover</p>
+              <TiArrowSortedDown />
+            </div>
+            {openDiscover ? (
+              <div className={styles.sidebar_discover}>
+                {discover.map((el, i) => (
+                  <p key={i + 1}>
+                    <Link href={{ pathname: el.link }}>{el.name}</Link>
+                  </p>
+                ))}
+              </div>
+            ) : null}
+          </div>
+          <div>
+            <div className={styles.sidebar_menu_box} onClick={openHelpMenu}>
+              <p>Help Center</p>
+              <TiArrowSortedDown />
+            </div>
+            {openHelp ? (
+              <div className={styles.sidebar_discover}>
+                {helpCenter.map((el, i) => (
+                  <p key={i + 1}>
+                    <Link href={{ pathname: el.link }}>{el.name}</Link>
+                  </p>
+                ))}
+              </div>
+            ) : null}
+          </div>
+        </div>
+        <div className={styles.button}>
+          <Button btnName="Create" />
+          <Button btnName="Connect Wallet" />
+        </div>
+      </div>
+    </>
+  );
 };
 
 export default Sidebar;

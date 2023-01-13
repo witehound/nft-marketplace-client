@@ -136,7 +136,7 @@ const Navbar = () => {
       </div>
       {openSideBarMenu ? (
         <div className={styles.Sidebar}>
-          <Sidebar setOpenSideBarMneu={setOpenSideBarMneu} />
+          <Sidebar setOpenSideBarMenu={setOpenSideBarMneu} />
         </div>
       ) : null}
     </div>
