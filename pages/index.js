@@ -2,7 +2,7 @@ import React from "react";
 
 //INTERENAL import
 import styles from "../styles/index.module.css";
-import { Hero, Service, BigNftSlider } from "../components";
+import { Hero, Service, BigNftSlider, Subscribe } from "../components";
 
 const Home = () => {
   return (
@@ -10,6 +10,7 @@ const Home = () => {
       <Hero />
       <Service />
       <BigNftSlider />
+      <Subscribe />
     </div>
   );
 };

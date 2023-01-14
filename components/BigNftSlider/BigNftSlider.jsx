@@ -68,7 +68,7 @@ const BigNftSlider = () => {
       price: "4664 ETH",
       like: 243,
       image: images.user4,
-      nftImage: images.nft_image_1,
+      nftImage: images.nft_image_3,
       time: {
         days: 87,
         hours: 29,
@@ -81,12 +81,16 @@ const BigNftSlider = () => {
   const increaMent = useCallback(() => {
     if (idNumber + 1 < sliderData.length) {
       setIdNumber(idNumber + 1);
+    } else {
+      setIdNumber(0);
     }
   }, [idNumber, sliderData.length]);
 
   const decreaMent = useCallback(() => {
     if (idNumber > 0) {
       setIdNumber(idNumber - 1);
+    } else {
+      setIdNumber(sliderData.length - 1);
     }
   }, [idNumber]);
 
