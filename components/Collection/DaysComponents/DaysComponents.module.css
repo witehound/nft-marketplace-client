@@ -1,0 +1,125 @@
+.daysComponent {
+  width: 100%;
+  border-radius: 1rem;
+  transition: all 0.3s ease-in;
+  cursor: pointer;
+  padding: 0.2rem;
+}
+
+.daysComponent:hover {
+  box-shadow: var(--box-shadow);
+}
+
+.daysComponent_box_img_img {
+  border-radius: 1rem;
+}
+
+.daysComponent_box_profile {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+}
+
+.daysComponent_box_img_1 {
+  border-bottom-left-radius: 1rem;
+}
+
+.daysComponent_box_img_3 {
+  border-bottom-right-radius: 1rem;
+}
+
+.daysComponent_box_title {
+  padding: 1rem 2rem;
+}
+
+.daysComponent_box_title_info_profile {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.daysComponent_box_title_info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.daysComponent_box_title_info_profile_img {
+  border-radius: 50%;
+}
+
+.daysComponent_box_title_info_profile span {
+  font-weight: 600;
+  padding-inline: 0.5rem;
+}
+
+.daysComponent_box_title_info_price small {
+  font-weight: 600;
+  border: 3px solid var(--icons-color);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.daysComponent_box_title {
+  padding: 1rem;
+}
+
+@media screen and (min-device-width: 320px) and (max-device-width: 768px) {
+  .daysComponent_box_profile {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .daysComponent_box_title_info {
+    flex-direction: column;
+    gap: 2rem;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+}
+
+@media screen and (max-device-width: 820px) {
+  .daysComponent_box_img_2 {
+    display: none;
+  }
+
+  .daysComponent_box_img_3 {
+    border-bottom-right-radius: 1rem;
+  }
+}
+
+@media screen and (max-device-width: 640px) {
+  .daysComponent_box_img_img {
+    height: 250px;
+    width: 400px;
+  }
+}
+
+@media screen and (max-device-width: 500px) {
+  .daysComponent_box_img_img {
+    height: 200px;
+    width: 360px;
+  }
+
+  .daysComponent_box_img_1 {
+    height: 180px;
+  }
+
+  .daysComponent_box_img_3 {
+    display: none;
+  }
+}
+
+@media screen and (max-device-width: 450px) {
+  .daysComponent_box_img_img {
+    height: 180px;
+    width: 320px;
+  }
+
+  .daysComponent_box_img_1 {
+    height: 150px;
+  }
+
+  .daysComponent_box_img_3 {
+    display: none;
+  }
+}

@@ -20,7 +20,7 @@
 }
 
 .NFTCard_box:hover {
-  box-shadow: var(--box-shadow-2);
+  box-shadow: var(--box-shadow-two);
 }
 
 .NFTCard_box:hover .NFTCard_box_img_img {

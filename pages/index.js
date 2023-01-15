@@ -11,6 +11,7 @@ import {
   Category,
   Filter,
   NFTCard,
+  Collection,
 } from "../components";
 
 const Home = () => {
@@ -19,6 +20,7 @@ const Home = () => {
       <Hero />
       <Service />
       <BigNftSlider />
+      <Collection />
       <Title
         heading="Browse by Category"
         paragraph="Explore the Nfts in the Most Featured Category"
