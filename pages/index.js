@@ -10,6 +10,7 @@ import {
   Title,
   Category,
   Filter,
+  NFTCard,
 } from "../components";
 
 const Home = () => {
@@ -24,6 +25,7 @@ const Home = () => {
       />
 
       <Filter />
+      <NFTCard NFTData={[]} />
       <Category />
       <Subscribe />
     </div>
