@@ -1,20 +1,16 @@
 import React, { useState, useEffect } from "react";
 import {
-  BsFillAlarmFill,
-  BsFillCalendarDateFill,
-  BsCalendar3,
-} from "react-icons/bs";
+  RiUserFollowFill,
+  RiUserUnfollowFill,
+  RiAwardLine,
+} from "react-icons/ri";
 
 //INTERNAL IMPORT
-import Style from "./Collection.module.css";
-import DaysComponent from "./DaysComponents/DaysComponents";
+import Style from "./FollowerTab.module.css";
+import FollowerTabCard from "./FollowerTabCard/FollowerTabCard";
 import images from "../../img";
 
-const Collection = () => {
-  const [popular, setPopular] = useState(true);
-  const [following, setFollowing] = useState(false);
-  const [news, setNews] = useState(false);
-
+const FollowerTab = ({ TopCreator }) => {
   const CardArray = [
     {
       background: images.creatorbackground1,
@@ -49,66 +45,84 @@ const Collection = () => {
       user: images.user8,
     },
   ];
-  const newsArray = [
+  const FollowingArray = [
     {
       background: images.creatorbackground3,
       user: images.user3,
+      seller: "7200d8d8390d9993ujdc93900399djj277x",
     },
     {
       background: images.creatorbackground4,
       user: images.user4,
+      seller: "7200d8d8390d9993ujdc93900399djj277x",
     },
     {
       background: images.creatorbackground5,
       user: images.user5,
+      seller: "7200d8d8390d9993ujdc93900399djj277x",
     },
     {
       background: images.creatorbackground6,
       user: images.user6,
+      seller: "7200d8d8390d9993ujdc93900399djj277x",
     },
     {
       background: images.creatorbackground1,
       user: images.user1,
+      seller: "7200d8d8390d9993ujdc93900399djj277x",
     },
     {
       background: images.creatorbackground2,
       user: images.user2,
+      seller: "7200d8d8390d9993ujdc93900399djj277x",
     },
   ];
-  const followingArray = [
+  const NewsArray = [
     {
       background: images.creatorbackground1,
       user: images.user1,
+      seller: "7200d8d8390d9993ujdc93900399djj277x",
     },
     {
       background: images.creatorbackground2,
       user: images.user2,
+      seller: "7200d8d8390d9993ujdc93900399djj277x",
     },
     {
       background: images.creatorbackground3,
       user: images.user3,
+      seller: "7200d8d8390d9993ujdc93900399djj277x",
     },
     {
       background: images.creatorbackground4,
       user: images.user4,
+      seller: "7200d8d8390d9993ujdc93900399djj277x",
     },
     {
       background: images.creatorbackground5,
       user: images.user5,
+      seller: "7200d8d8390d9993ujdc93900399djj277x",
     },
     {
       background: images.creatorbackground6,
       user: images.user6,
+      seller: "7200d8d8390d9993ujdc93900399djj277x",
     },
     {
       background: images.creatorbackground7,
       user: images.user7,
+      seller: "7200d8d8390d9993ujdc93900399djj277x",
     },
     {
       background: images.creatorbackground8,
       user: images.user8,
+      seller: "7200d8d8390d9993ujdc93900399djj277x",
     },
   ];
+
+  const [popular, setPopular] = useState(true);
+  const [following, setFollowing] = useState(false);
+  const [news, setNews] = useState(false);
 
   const openPopular = () => {
     if (!popular) {
@@ -117,7 +131,6 @@ const Collection = () => {
       setNews(false);
     }
   };
-
   const openFollower = () => {
     if (!following) {
       setPopular(false);
@@ -125,7 +138,6 @@ const Collection = () => {
       setNews(false);
     }
   };
-
   const openNews = () => {
     if (!news) {
       setPopular(false);
@@ -133,49 +145,58 @@ const Collection = () => {
       setNews(true);
     }
   };
+
   return (
-    <div className={Style.collection}>
-      <div className={Style.collection_title}>
-        <h2>Top List Creators</h2>
-        <div className={Style.collection_collections}>
-          <div className={Style.collection_collections_btn}>
+    <div className={Style.followerTab}>
+      <div className={Style.followerTab_title}>
+        <h2> Top Creators List..</h2>
+        <div className={Style.followerTab_tabs}>
+          <div className={Style.followerTab_tabs_btn}>
             <button onClick={() => openPopular()}>
-              <BsFillAlarmFill /> 24 hours
+              <RiUserFollowFill /> Popular
             </button>
             <button onClick={() => openFollower()}>
-              <BsCalendar3 /> 7 days
+              <RiUserFollowFill /> Following
             </button>
             <button onClick={() => openNews()}>
-              <BsFillCalendarDateFill /> 30 days
+              <RiAwardLine /> NoteWorthy
             </button>
           </div>
         </div>
       </div>
-      {popular ? (
-        <div className={Style.collection_box}>
-          {CardArray.map((el, i) => (
-            <DaysComponent key={i + 1} i={i} el={el} />
-          ))}
-        </div>
-      ) : null}
 
-      {following ? (
-        <div className={Style.collection_box}>
-          {followingArray.map((el, i) => (
-            <DaysComponent key={i + 1} i={i} el={el} />
+      {popular && (
+        <div className={Style.followerTab_box}>
+          {TopCreator.map((el, i) => (
+            <FollowerTabCard key={i + 1} i={i} el={el} />
           ))}
         </div>
-      ) : null}
+      )}
 
-      {news ? (
-        <div className={Style.collection_box}>
-          {newsArray.map((el, i) => (
-            <DaysComponent key={i + 1} i={i} el={el} />
+      {following && (
+        <div className={Style.followerTab_box}>
+          {FollowingArray.map((el, i) => (
+            <FollowerTabCard key={i + 1} i={i} el={el} />
           ))}
         </div>
-      ) : null}
+      )}
+
+      {news && (
+        <div className={Style.followerTab_box}>
+          {NewsArray.map((el, i) => (
+            <FollowerTabCard key={i + 1} i={i} el={el} />
+          ))}
+        </div>
+      )}
+
+      <div className={Style.followerTab_member}>
+        <div className={Style.followerTab_member_box}>
+          <a href="#">Show me more</a>
+          <a href="#">Become, author</a>
+        </div>
+      </div>
     </div>
   );
 };
 
-export default Collection;
+export default FollowerTab;

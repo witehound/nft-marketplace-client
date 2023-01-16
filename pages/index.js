@@ -12,6 +12,11 @@ import {
   Filter,
   NFTCard,
   Collection,
+  FollowerTab,
+  AudioLive,
+  Slider,
+  Brand,
+  Video,
 } from "../components";
 
 const Home = () => {
@@ -20,16 +25,29 @@ const Home = () => {
       <Hero />
       <Service />
       <BigNftSlider />
+      <Title
+        heading="Audio Collection"
+        paragraph="Discover the most outstanding NFTs in all topics of life."
+      />
+      <AudioLive />
+      <FollowerTab TopCreator={[]} />
+
+      <Slider />
+      <Title
+        heading="New Collection"
+        paragraph="Discover the most outstanding NFTs in all topics of life."
+      />
       <Collection />
       <Title
         heading="Browse by Category"
         paragraph="Explore the Nfts in the Most Featured Category"
       />
-
       <Filter />
       <NFTCard NFTData={[]} />
       <Category />
       <Subscribe />
+      <Brand />
+      <Video />
     </div>
   );
 };
